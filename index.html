@@ -1,0 +1,1019 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Fulfillments – AfterShip&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f3f3f3;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Top Nav ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.topnav {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 52px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #e5e5e5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.logo {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.logo-dot { width: 8px; height: 8px; background: #f59e0b; border-radius: 50%; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-sep { width: 1px; height: 20px; background: #e5e5e5; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-label { color: #666; font-size: 13px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Page Layout ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.page { max-width: 1200px; margin: 0 auto; padding: 24px 20px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.page-header {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.page-title { font-size: 20px; font-weight: 700; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.header-actions { display: flex; gap: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex; align-items: center; gap: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 7px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.15s;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-default {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: #d1d5db;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #374151;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-default:hover { background: #f9fafb; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary:hover { background: #333; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-outline {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: #d1d5db;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #374151;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-sm { padding: 5px 10px; font-size: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-warning {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fef3c7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: #f59e0b;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #92400e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-warning:hover { background: #fde68a; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Combine Banner ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.combine-banner {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fffbeb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #fde68a;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.banner-icon { font-size: 18px; flex-shrink: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.banner-text { flex: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.banner-title { font-weight: 600; color: #92400e; font-size: 13px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.banner-sub { color: #b45309; font-size: 12px; margin-top: 2px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.banner-close {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: none; border: none; cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #9ca3af; font-size: 18px; padding: 2px 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.banner-close:hover { color: #374151; background: #fde68a; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Card ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #e5e5e5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Toolbar ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.toolbar {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #e5e5e5;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.search-box {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f9fafb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #e5e5e5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 7px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #9ca3af;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.filter-chips { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-bottom: 1px solid #f3f4f6; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chip {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex; align-items: center; gap: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #eff6ff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #bfdbfe;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 4px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #1d4ed8;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chip-x { cursor: pointer; color: #60a5fa; font-size: 14px; line-height: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chip-x:hover { color: #1d4ed8; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.clear-all { font-size: 12px; color: #6b7280; cursor: pointer; text-decoration: underline; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.clear-all:hover { color: #374151; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Table ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>table { width: 100%; border-collapse: collapse; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>thead th {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #6b7280;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #f0f0f0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fafafa;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tbody tr { border-bottom: 1px solid #f3f4f6; transition: background 0.1s; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tbody tr:last-child { border-bottom: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tbody tr:hover { background: #fafafa; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>td { padding: 12px 14px; vertical-align: middle; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.shipment-id { font-weight: 600; color: #1a1a1a; font-size: 13px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.shipment-icons { display: flex; gap: 4px; margin-top: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.icon-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 24px; height: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f3f4f6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #e5e5e5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer; font-size: 12px; color: #6b7280;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.icon-btn:hover { background: #e5e7eb; color: #374151; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.status-badge {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 3px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.status-awaiting { background: #fef9c3; color: #854d0e; border: 1px solid #fde047; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.channel {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; gap: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px; color: #374151;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.channel-icon { font-size: 14px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.combining-badge {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex; align-items: center; gap: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ecfdf5; border: 1px solid #6ee7b7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 10px; padding: 2px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px; color: #065f46; font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-left: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.not-assigned {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; gap: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px; color: #9ca3af;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.checkbox-cell { width: 40px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type=checkbox] {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 16px; height: 16px; cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>accent-color: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Modal ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-overlay {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: fixed; inset: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(0,0,0,0.45);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 200;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: flex-start; justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 40px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-overlay.hidden { display: none; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 760px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 20px 60px rgba(0,0,0,0.18);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: modalIn 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes modalIn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>from { opacity: 0; transform: translateY(-12px); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-header {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #f0f0f0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-title { font-size: 16px; font-weight: 700; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-close {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 30px; height: 30px; border: none; background: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer; font-size: 20px; color: #9ca3af;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-close:hover { background: #f3f4f6; color: #374151; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-desc {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #6b7280;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f9fafb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #f0f0f0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-body { padding: 0; max-height: 55vh; overflow-y: auto; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Group ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.group { border-bottom: 1px solid #f0f0f0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.group:last-child { border-bottom: none; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.group-header {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 24px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fafafa;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #f0f0f0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.group-label { font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.group-count {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #e5e7eb; border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 1px 7px; font-size: 11px; font-weight: 600; color: #374151;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.group-select-all { margin-left: auto; font-size: 12px; color: #6b7280; cursor: pointer; display: flex; align-items: center; gap: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.group-select-all:hover { color: #1a1a1a; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Shipment Row in Modal ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.shipment-row {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #f9fafb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background 0.1s;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.shipment-row:last-child { border-bottom: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.shipment-row:hover { background: #f9fafb; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.shipment-row.surviving { background: #f0fdf4; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.shipment-row.deselected { opacity: 0.45; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-checkbox { margin-top: 2px; flex-shrink: 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-info { flex: 1; min-width: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-id { font-weight: 700; font-size: 13px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-channel { font-size: 12px; color: #6b7280; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-date { font-size: 11px; color: #9ca3af; margin-left: auto; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-recipient { font-size: 12px; color: #374151; margin-bottom: 3px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-items { font-size: 12px; color: #6b7280; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-amount { font-size: 12px; font-weight: 600; color: #1a1a1a; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.surviving-ctrl { flex-shrink: 0; text-align: center; width: 90px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.surviving-radio {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; flex-direction: column; align-items: center; gap: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.surviving-radio input[type=radio] { accent-color: #059669; width: 16px; height: 16px; cursor: pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.surviving-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 10px; font-weight: 600; color: #059669;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase; letter-spacing: 0.5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.surviving-badge {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex; align-items: center; gap: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #d1fae5; border: 1px solid #6ee7b7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px; padding: 2px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 10px; color: #065f46; font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.surviving-hint { font-size: 10px; color: #9ca3af; margin-top: 2px; text-align: center; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-items-list { margin-top: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.item-line { font-size: 11px; color: #9ca3af; padding-left: 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Modal Footer ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-footer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid #f0f0f0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fafafa;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.footer-summary { font-size: 12px; color: #6b7280; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.footer-summary strong { color: #1a1a1a; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.footer-actions { display: flex; gap: 8px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-combine {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #1a1a1a; color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-combine:hover { background: #333; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-combine:disabled {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #d1d5db; color: #9ca3af; cursor: not-allowed;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Success Toast ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.toast {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #1a1a1a; color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 20px; border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px; font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 8px 24px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 300;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: toastIn 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.toast.hidden { display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes toastIn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>from { opacity: 0; transform: translateX(-50%) translateY(10px); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>to { opacity: 1; transform: translateX(-50%) translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Pagination ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.table-footer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; justify-content: flex-end;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 16px; border-top: 1px solid #f0f0f0; gap: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.pag-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 28px; height: 28px; border: 1px solid #e5e5e5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px; background: #fff; cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px; color: #374151;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.pag-btn:hover { background: #f3f4f6; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── Tooltip for surviving logic ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.info-icon {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex; align-items: center; justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 14px; height: 14px; border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #e5e7eb; color: #6b7280;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 9px; font-weight: 700; cursor: help;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.info-icon:hover::after {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: attr(data-tip);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #1a1a1a; color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px; font-weight: 400;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 6px 10px; border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>white-space: pre-line;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 240px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 999;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Top Nav --&gt;</p>
+<p class="p1">&lt;nav class="topnav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="logo"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="logo-dot"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>AfterShip</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-sep"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;span class="nav-label"&gt;Shipping&lt;/span&gt;</p>
+<p class="p1">&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Page --&gt;</p>
+<p class="p1">&lt;div class="page"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Page Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="page-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1 class="page-title"&gt;Fulfillments&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header-actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-default"&gt;Label&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-default"&gt;Label&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-primary"&gt;Label&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Combine Banner --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="combine-banner" id="combineBanner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="banner-icon"&gt;📦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="banner-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="banner-title"&gt;You have shipments to combine&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="banner-sub"&gt;2 groups found — combining saves label costs and simplifies fulfillment&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="btn btn-warning" onclick="openModal()"&gt;Combine&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="banner-close" onclick="dismissBanner()" title="Dismiss"&gt;×&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Shipment Table Card --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Toolbar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="toolbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="search-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>🔍 Search</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-outline btn-sm"&gt;⇅&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Filters --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="filter-chips"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="chip"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Ship from location is NY warehouse</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip-x"&gt;×&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="clear-all"&gt;Clear all&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Table --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th class="checkbox-cell"&gt;&lt;input type="checkbox" /&gt;&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;Shipment ↕&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;Status&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;Channel&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;Date&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;Shipment total&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;Items&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;th&gt;Shipping service&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Row 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="shipment-id"&gt;#1001&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="shipment-icons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="icon-btn" title="Notes"&gt;📋&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="icon-btn" title="Comments"&gt;💬&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="icon-btn" title="Alert"&gt;⚠️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="icon-btn"&gt;▾&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;span class="status-badge status-awaiting"&gt;Awaiting shipment&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="channel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="channel-icon"&gt;🛍&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Yuki store</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#6b7280; font-size:13px;"&gt;Today at 6:50am&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="font-weight:600;"&gt;$3,648.00&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#374151;"&gt;3 items&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="not-assigned"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;⚠️&lt;/span&gt; Not assigned</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/tr&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Row 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="shipment-id"&gt;#1002&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="shipment-icons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="icon-btn"&gt;📋&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="icon-btn"&gt;💬&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;span class="status-badge status-awaiting"&gt;Awaiting shipment&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="channel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="channel-icon"&gt;🛍&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Yuki store</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#6b7280; font-size:13px;"&gt;Today at 6:55am&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="font-weight:600;"&gt;$8,343.00&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#374151;"&gt;10 items&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="not-assigned"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;⚠️&lt;/span&gt; Not assigned</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/tr&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Row 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="shipment-id"&gt;#1003&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;span class="status-badge status-awaiting"&gt;Awaiting shipment&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="channel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="channel-icon"&gt;🛍&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Yuki store</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#6b7280; font-size:13px;"&gt;Today at 6:55am&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="font-weight:600;"&gt;$4,747.00&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#374151;"&gt;2 items&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="not-assigned"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;⚠️&lt;/span&gt; Not assigned</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/tr&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Row 4 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="shipment-id"&gt;#1004&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;span class="status-badge status-awaiting"&gt;Awaiting shipment&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="channel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="channel-icon"&gt;🛍&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>American snowboard sho</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#6b7280; font-size:13px;"&gt;Today at 6:48am&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="font-weight:600;"&gt;$1,250.00&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#374151;"&gt;4 items&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="not-assigned"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;⚠️&lt;/span&gt; Not assigned</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/tr&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Row 5 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="shipment-id"&gt;#1005&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;&lt;span class="status-badge status-awaiting"&gt;Awaiting shipment&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="channel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="channel-icon"&gt;🛍&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>American snowboard sho</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#6b7280; font-size:13px;"&gt;Today at 6:55am&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="font-weight:600;"&gt;$890.00&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td style="color:#374151;"&gt;1 item&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="not-assigned"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;⚠️&lt;/span&gt; Not assigned</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/table&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="table-footer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="pag-btn"&gt;‹&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="pag-btn"&gt;›&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;&lt;!-- /page --&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ─────────────────────────────── MODAL ─────────────────────────────── --&gt;</p>
+<p class="p1">&lt;div class="modal-overlay hidden" id="modalOverlay" onclick="handleOverlayClick(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="modal" id="modal"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="modal-title"&gt;Combine shipments&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="modal-close" onclick="closeModal()"&gt;×&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-desc"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>The following shipments are eligible to combine. Items and costs from all selected shipments will be merged into the &lt;strong&gt;Surviving shipment&lt;/strong&gt;. Other shipments will be removed.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="info-icon" data-tip="Surviving shipment default:&amp;#10;1. Earliest created_at&amp;#10;2. Tiebreaker: earliest updated_at&amp;#10;3. Tiebreaker: smallest system ID&amp;#10;&amp;#10;You can change the surviving shipment by selecting a different radio button."&gt;i&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-body" id="modalBody"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- ── Group A ── --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="group" id="groupA"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="group-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="checkbox" id="groupA-all" checked onchange="toggleGroupAll('A', this.checked)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="group-label"&gt;Group 1&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="group-count" id="groupA-count"&gt;3 shipments&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="font-size:12px; color:#6b7280; margin-left: 4px;"&gt;· Yuki store · NY Warehouse → USA&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Shipment 1001 - Surviving (earliest created) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="shipment-row surviving" id="rowA-1001" onclick="toggleRow('A','1001',event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-checkbox"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="checkbox" id="chk-A-1001" checked onclick="stopProp(event)" onchange="onRowCheck('A','1001',this.checked)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-id"&gt;#1001&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-channel"&gt;Yuki store&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-date"&gt;Today at 6:50am&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-recipient"&gt;📍 John Smith · 123 Main St, New York, NY 10001, USA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-items-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Snowboard Boots (Black, US 10) × 2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Helmet Pro X × 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex; gap:12px; margin-top:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-amount"&gt;$3,648.00&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-items"&gt;3 items&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="surviving-ctrl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="surviving-radio"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input type="radio" name="survivingA" id="sur-A-1001" value="1001" checked onchange="onSurvivingChange('A','1001')" onclick="stopProp(event)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="surviving-label"&gt;Surviving&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="surviving-badge"&gt;✓ Default&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="surviving-hint"&gt;Earliest created&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Shipment 1002 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="shipment-row" id="rowA-1002" onclick="toggleRow('A','1002',event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-checkbox"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="checkbox" id="chk-A-1002" checked onclick="stopProp(event)" onchange="onRowCheck('A','1002',this.checked)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-id"&gt;#1002&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-channel"&gt;Yuki store&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-date"&gt;Today at 6:55am&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-recipient"&gt;📍 John Smith · 123 Main St, New York, NY 10001, USA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-items-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Snowboard Deck Limited Edition × 4&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Binding Set Pro × 3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Goggles UV400 × 3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex; gap:12px; margin-top:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-amount"&gt;$8,343.00&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-items"&gt;10 items&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="surviving-ctrl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="surviving-radio"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input type="radio" name="survivingA" id="sur-A-1002" value="1002" onchange="onSurvivingChange('A','1002')" onclick="stopProp(event)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="surviving-label" style="color:#9ca3af;"&gt;Surviving&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Shipment 1003 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="shipment-row" id="rowA-1003" onclick="toggleRow('A','1003',event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-checkbox"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="checkbox" id="chk-A-1003" checked onclick="stopProp(event)" onchange="onRowCheck('A','1003',this.checked)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-id"&gt;#1003&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-channel"&gt;Yuki store&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-date"&gt;Today at 6:55am&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-recipient"&gt;📍 John Smith · 123 Main St, New York, NY 10001, USA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-items-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Wax Kit Deluxe × 2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex; gap:12px; margin-top:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-amount"&gt;$4,747.00&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-items"&gt;2 items&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="surviving-ctrl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="surviving-radio"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input type="radio" name="survivingA" id="sur-A-1003" value="1003" onchange="onSurvivingChange('A','1003')" onclick="stopProp(event)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="surviving-label" style="color:#9ca3af;"&gt;Surviving&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;&lt;!-- /group A --&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- ── Group B ── --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="group" id="groupB"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="group-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="checkbox" id="groupB-all" checked onchange="toggleGroupAll('B', this.checked)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="group-label"&gt;Group 2&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="group-count" id="groupB-count"&gt;2 shipments&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="font-size:12px; color:#6b7280; margin-left: 4px;"&gt;· American snowboard shop · NY Warehouse → USA&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Shipment 1004 - Surviving (earliest created) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="shipment-row surviving" id="rowB-1004" onclick="toggleRow('B','1004',event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-checkbox"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="checkbox" id="chk-B-1004" checked onclick="stopProp(event)" onchange="onRowCheck('B','1004',this.checked)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-id"&gt;#1004&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-channel"&gt;American snowboard shop&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-date"&gt;Today at 6:48am&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-recipient"&gt;📍 Emily Davis · 45 Park Ave, Los Angeles, CA 90001, USA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-items-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Carving Board 158cm × 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Boot Liner Replacement × 2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Edge Tuner Kit × 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex; gap:12px; margin-top:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-amount"&gt;$1,250.00&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-items"&gt;4 items&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="surviving-ctrl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="surviving-radio"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input type="radio" name="survivingB" id="sur-B-1004" value="1004" checked onchange="onSurvivingChange('B','1004')" onclick="stopProp(event)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="surviving-label"&gt;Surviving&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="surviving-badge"&gt;✓ Default&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="surviving-hint"&gt;Earliest created&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Shipment 1005 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="shipment-row" id="rowB-1005" onclick="toggleRow('B','1005',event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-checkbox"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="checkbox" id="chk-B-1005" checked onclick="stopProp(event)" onchange="onRowCheck('B','1005',this.checked)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-id"&gt;#1005&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-channel"&gt;American snowboard shop&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-date"&gt;Today at 6:55am&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-recipient"&gt;📍 Emily Davis · 45 Park Ave, Los Angeles, CA 90001, USA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="row-items-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="item-line"&gt;· Snowboard Bag XL × 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex; gap:12px; margin-top:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-amount"&gt;$890.00&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="row-items"&gt;1 item&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="surviving-ctrl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="surviving-radio"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input type="radio" name="survivingB" id="sur-B-1005" value="1005" onchange="onSurvivingChange('B','1005')" onclick="stopProp(event)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="surviving-label" style="color:#9ca3af;"&gt;Surviving&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;&lt;!-- /group B --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;&lt;!-- /modal-body --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-footer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="footer-summary" id="footerSummary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;strong&gt;2 groups&lt;/strong&gt; · &lt;strong&gt;5 shipments&lt;/strong&gt; selected — will be combined into &lt;strong&gt;2 surviving shipments&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="footer-actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-default" onclick="closeModal()"&gt;Cancel&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-combine btn-primary" id="combineBtn" onclick="doConfirm()"&gt;Combine 5 shipments&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Toast --&gt;</p>
+<p class="p1">&lt;div class="toast hidden" id="toast"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>✅ Combined successfully — 2 surviving shipments created</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// ── State ──</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const state = {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>A: { selected: new Set(['1001','1002','1003']), surviving: '1001' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>B: { selected: new Set(['1004','1005']), surviving: '1004' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function openModal() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('modalOverlay').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.body.style.overflow = 'hidden';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function closeModal() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('modalOverlay').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.body.style.overflow = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function handleOverlayClick(e) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (e.target === document.getElementById('modalOverlay')) closeModal();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function dismissBanner() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('combineBanner').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function stopProp(e) { e.stopPropagation(); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function toggleRow(group, id, event) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const chk = document.getElementById('chk-' + group + '-' + id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>chk.checked = !chk.checked;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>onRowCheck(group, id, chk.checked);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function onRowCheck(group, id, checked) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const s = state[group];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (checked) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>s.selected.add(id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>s.selected.delete(id);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// If deselecting the surviving, pick the next available</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (s.surviving === id) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const next = [...s.selected][0];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (next) setSurviving(group, next);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>refreshRow(group, id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>refreshGroupHeader(group);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>refreshFooter();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function setSurviving(group, id) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const s = state[group];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const old = s.surviving;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>s.surviving = id;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('sur-' + group + '-' + id).checked = true;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>refreshRow(group, id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (old &amp;&amp; old !== id) refreshRow(group, old);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function onSurvivingChange(group, id) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>setSurviving(group, id);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function refreshRow(group, id) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const s = state[group];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const row = document.getElementById('row' + group + '-' + id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const radio = document.getElementById('sur-' + group + '-' + id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const radioLabel = radio.nextElementSibling;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const badge = radio.parentElement.querySelector('.surviving-badge');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const hint = radio.parentElement.querySelector('.surviving-hint');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const isSelected = s.selected.has(id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const isSurviving = s.surviving === id;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>row.classList.toggle('surviving', isSelected &amp;&amp; isSurviving);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>row.classList.toggle('deselected', !isSelected);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (radioLabel) radioLabel.style.color = isSurviving &amp;&amp; isSelected ? '#059669' : '#9ca3af';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// disable radio if not selected</p>
+<p class="p1"><span class="Apple-converted-space">    </span>radio.disabled = !isSelected;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function toggleGroupAll(group, checked) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const s = state[group];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const allIds = group === 'A' ? ['1001','1002','1003'] : ['1004','1005'];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>allIds.forEach(id =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const chk = document.getElementById('chk-' + group + '-' + id);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>chk.checked = checked;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (checked) s.selected.add(id);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>else s.selected.delete(id);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>refreshRow(group, id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Make sure surviving is valid</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (checked &amp;&amp; !s.selected.has(s.surviving)) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setSurviving(group, [...s.selected][0]);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else if (!checked) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>s.surviving = null;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>refreshGroupHeader(group);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>refreshFooter();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function refreshGroupHeader(group) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const s = state[group];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const allIds = group === 'A' ? ['1001','1002','1003'] : ['1004','1005'];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const allChk = document.getElementById('group' + group + '-all');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const count = s.selected.size;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>allChk.checked = count === allIds.length;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>allChk.indeterminate = count &gt; 0 &amp;&amp; count &lt; allIds.length;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const countEl = document.getElementById('group' + group + '-count');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>countEl.textContent = count + ' shipment' + (count !== 1 ? 's' : '');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function refreshFooter() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const sA = state.A.selected.size;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const sB = state.B.selected.size;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const total = sA + sB;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const groups = (sA &gt;= 2 ? 1 : 0) + (sB &gt;= 2 ? 1 : 0);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const survivingCount = groups;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const sumEl = document.getElementById('footerSummary');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const btn = document.getElementById('combineBtn');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (total === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>sumEl.innerHTML = 'No shipments selected';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>btn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>btn.textContent = 'Combine';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>sumEl.innerHTML = `&lt;strong&gt;${groups} group${groups !== 1 ? 's' : ''}&lt;/strong&gt; · &lt;strong&gt;${total} shipment${total !== 1 ? 's' : ''}&lt;/strong&gt; selected — will be combined into &lt;strong&gt;${survivingCount} surviving shipment${survivingCount !== 1 ? 's' : ''}&lt;/strong&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.disabled = groups === 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.textContent = `Combine ${total} shipment${total !== 1 ? 's' : ''}`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function doConfirm() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>closeModal();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Show toast</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const toast = document.getElementById('toast');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>toast.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>setTimeout(() =&gt; toast.classList.add('hidden'), 3500);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Simulate list update: mark combined rows</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const combined = {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>A: { survivors: state.A.surviving, merged: [...state.A.selected].filter(x =&gt; x !== state.A.surviving) },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>B: { survivors: state.B.surviving, merged: [...state.B.selected].filter(x =&gt; x !== state.B.surviving) },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Fade out merged rows and update survivors</p>
+<p class="p1"><span class="Apple-converted-space">    </span>Object.entries(combined).forEach(([group, info]) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>info.merged.forEach(id =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const rowId = '#' + id;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Find matching row in table</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const rows = document.querySelectorAll('tbody tr');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rows.forEach(r =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (r.querySelector('.shipment-id')?.textContent === rowId) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>r.style.transition = 'opacity 0.5s';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>r.style.opacity = '0.2';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; r.style.display = 'none', 600);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Update surviving row label</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const rows = document.querySelectorAll('tbody tr');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>rows.forEach(r =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const idEl = r.querySelector('.shipment-id');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (idEl &amp;&amp; idEl.textContent === '#' + info.survivors) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const badge = document.createElement('span');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>badge.className = 'combining-badge';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>badge.textContent = '✓ Combined';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>idEl.appendChild(badge);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Hide banner</p>
+<p class="p1"><span class="Apple-converted-space">    </span>dismissBanner();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
